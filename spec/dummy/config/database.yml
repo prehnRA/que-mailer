@@ -1,0 +1,5 @@
+test:
+  adapter: postgresql
+  database: que_mailer_test
+  pool: 5
+  timeout: 5000
