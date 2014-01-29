@@ -6,5 +6,3 @@ gem 'rspec-rails'
 gem 'pg'
 gem 'que'
 gem 'que_mailer', :path => "../../"
-
-gem 'pry'
