@@ -1,3 +1,5 @@
+require 'que'
+
 module Que
   module Mailer
     class << self
@@ -82,7 +84,7 @@ module Que
       
       def deliver_at(time)
         if @mailer_class.deliver?
-          MailJob.queue(actual_message, :run_at => time)
+          MailJob.queue(@mailer_class.to_s, @method_name, *@args, {:run_at => time})
         end
       end
       
