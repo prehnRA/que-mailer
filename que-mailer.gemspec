@@ -16,13 +16,12 @@ Gem::Specification.new do |gem|
   gem.require_paths = ["lib"]
   gem.version       = Que::Mailer::VERSION
 
-  gem.add_dependency("rails", "~> 4.0.0")
+  gem.add_dependency("rails", ">= 4.0")
   gem.add_dependency("activesupport", ">= 4.0")
   gem.add_dependency("actionmailer", ">= 4.0")
-  gem.add_dependency("que", "0.5.0")
-  gem.add_dependency('pg')
+  gem.add_dependency("que", "~> 0.5")
+  gem.add_dependency('pg', "~> 0")
   gem.add_development_dependency('rake')
   gem.add_development_dependency('rspec')
   gem.add_development_dependency('rspec-rails')
-
 end
