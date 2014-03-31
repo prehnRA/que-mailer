@@ -78,13 +78,13 @@ module Que
            
       def deliver
         if @mailer_class.deliver?
-          MailJob.queue(@mailer_class.to_s, @method_name, *@args)
+          MailJob.enqueue(@mailer_class.to_s, @method_name, *@args)
         end
       end
       
       def deliver_at(time)
         if @mailer_class.deliver?
-          MailJob.queue(@mailer_class.to_s, @method_name, *@args, {:run_at => time})
+          MailJob.enqueue(@mailer_class.to_s, @method_name, *@args, {:run_at => time})
         end
       end
       

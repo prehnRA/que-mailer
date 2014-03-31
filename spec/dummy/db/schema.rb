@@ -11,19 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140128035854) do
+ActiveRecord::Schema.define(version: 20140331163005) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "que_jobs", id: false, force: true do |t|
-    t.integer  "priority",              default: 100, null: false
+    t.integer  "priority",    limit: 2, default: 100, null: false
     t.datetime "run_at",                              null: false
     t.integer  "job_id",      limit: 8,               null: false
     t.text     "job_class",                           null: false
     t.json     "args",                  default: [],  null: false
     t.integer  "error_count",           default: 0,   null: false
     t.text     "last_error"
+    t.text     "queue",                 default: "",  null: false
   end
 
 end
